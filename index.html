@@ -32,26 +32,27 @@
       padding-bottom: 60px;
     }
 
+    /* --- Novo Banner com a Logo Oficial --- */
     header {
-      background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url('Mestre_dos_Assados.jpeg') no-repeat center center/cover;
-      color: var(--white);
+      background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.8));
       text-align: center;
-      padding: 80px 20px;
+      padding: 40px 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
-    header h1 {
-      font-size: 2.8rem;
-      margin-bottom: 10px;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+    .logo-banner {
+      max-width: 350px;
+      width: 100%;
+      height: auto;
+      border-radius: 15px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.7);
+      transition: transform 0.3s ease;
     }
 
-    header p {
-      font-style: italic;
-      font-size: 1.2rem;
-      opacity: 0.9;
-      text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
+    .logo-banner:hover {
+      transform: scale(1.03);
     }
 
     .main-layout {
@@ -350,7 +351,7 @@
     }
 
     @media (max-width: 768px) {
-      header h1 { font-size: 2rem; }
+      .logo-banner { max-width: 260px; }
       .map-container { padding-top: 300px; }
       .social-links { flex-direction: column; align-items: center; gap: 10px; }
     }
@@ -359,8 +360,8 @@
 <body>
 
 <header>
-  <h1>Mestre dos Assados</h1>
-  <p>Frangos e Carnes Assadas — O Melhor Sabor da Região</p>
+  <!-- Sua imagem salva como logo.jpeg deve ficar na mesma pasta que este arquivo html -->
+  <img src="logo.jpeg" alt="Mestre dos Assados Logo" class="logo-banner">
 </header>
 
 <div class="main-layout">
@@ -370,7 +371,6 @@
       <h2>Nossa Localização</h2>
       <p>R. Guia Lopes, 3672 - Rondônia, Novo Hamburgo - RS</p>
       <div class="map-container">
-        <!-- MAPA ATUALIZADO: Apontando exatamente para a R. Guia Lopes, 3672 em Novo Hamburgo -->
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3466.864771510468!2d-51.1189498!3d-29.6946025!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x951942548cb45e9d%3A0xc6cb5fb5b931c5ee!2sR.%20Guia%20Lopes%2C%203672%20-%20Rond%C3%B4nia%2C%20Novo%20Hamburgo%20-%20RS%2C%2093415-260!5e0!3m2!1spt-BR!2sbr!4v1720541200000!5m2!1spt-BR!2sbr" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
     </section>
@@ -410,23 +410,25 @@
 
 <script>
   const cardapioItens = [
-    { id: 1, nome: "Água com gás", desc: "", preco: 5.00, img: "https://www.imigrantesbebidas.com.br/bebida/images/products/full/2894-agua-mineral-crystal-com-gas-500ml.jpg?auto=format&fit=crop&w=400&q=80" },
-    { id: 2, nome: "Água sem gás", desc: "", preco: 5.00, img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmx5MYpuKvllLa4ekT3mnicMZ0gbwb71Dk7WrHrjHoox3tB6-M7Aj3g2kc&s=10" },
-    { id: 3, nome: "Guaraná lata", desc: "350ml", preco: 5.00, img: "https://cdn.awsli.com.br/2500x2500/1330/1330028/produto/51587137/a19f18b3f5.jpg" },
-    { id: 4, nome: "Coca cola lata", desc: "Lata 350ml.", preco: 6.00, img: "https://images.unsplash.com/photo-1622483767028-3f66f32aef97?auto=format&fit=crop&w=400&q=80" },
-    { id: 5, nome: "Guaraná", desc: "2 litros", preco: 12.00, img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSI6mjlzAVSTXXM3lAa7-jthll6C6Dm_d31rHvqUks3uY4xM0v20HtRRPTC&s=10" },
-    { id: 6, nome: "Coca cola", desc: "2 litros", preco: 15.00, img: "https://fortatacadista.vteximg.com.br/arquivos/ids/299392-1000-1000/2301822_7894900027013_BEB-REFRIG.COCA-COLA-2L-PET..jpg" },
+    { id: 1, nome: "Costela janela", desc:"por quilo", preco: 4.00, img: "https://minervafoods.com/wp-content/uploads/2023/07/tinywow_02-Costela-do-traseiro-com-legumes-assados-JANELA-HOR_29124578-scaled.jpg" },
+    { id: 2, nome: "Costela desossada", desc:"por quilo", preco: 4.00, img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEHZOmcCKrmdWaySuniDXeoeuE1RZm1JR5Bf5isVfzH2Cid1wmSZk626Ti&s=10" },
+    { id: 3, nome: "Vazio", desc:"por quilo", preco: 4.00, img: "https://damedosassados.com.br/wp-content/uploads/2017/03/VazioMagro.jpeg" },
+    { id: 4, nome: "Sobrecoxa", desc:"unidade", preco: 5.00, img: "https://www.sumerbol.com.br/uploads/images/2017/10/coxa-e-sobrecoxa-de-frango-assada-ao-vinho-1509133757.jpg" },
+    { id: 5, nome: "Salsição", desc:"unidade", preco: 4.00, img: "https://p2.trrsf.com/image/fget/cf/1200/630/middle/images.terra.com/2022/07/17/109317278-receitas-com-linguica-de-churrasco-toscana.jpg" },
+    { id: 6, nome: "Linguiça", desc:"por quilo", preco: 4.00, img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTuTi8oZLSOi9gd2GLXawoxreh_IUIx5WgAjwiYEWFJ_m2cZo-s9I-BRqk&s=10" },
     { id: 7, nome: "Frango assado inteiro + polenta", desc: "Acompanha polenta da máquina", preco: 50.00, img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlHVhanmayEgqDSwhOso_lmTSCxFK5YFoBHWrGQFvHWS3g7dgkY3lrD_M&s=10" },
     { id: 8, nome: "Porção de polenta frita", desc: "Frita na hora", preco: 8.00, img: "https://cozinha365.com.br/wp-content/uploads/2025/10/Polenta-frita-na-airfryer-1024x1024.png" },
     { id: 9, nome: "Maionese", desc: "500 gramas", preco: 10.00, img: "https://claudia.abril.com.br/wp-content/uploads/2020/02/maionese-de-batata.jpg" },
     { id: 10, nome: "Polenta da máquina porção", desc:"", preco: 8.00, img: "https://guiadacozinha.com.br/wp-content/uploads/2021/10/polenta-frita-especial-42871.jpg" },
     { id: 11, nome: "Porção de arroz", desc:"400 gramas", preco: 8.00, img: "https://content.paodeacucar.com/wp-content/uploads/2019/11/arroz-branco-churrasco.jpg" },
-    { id: 12, nome: "Sobrecoxa", desc:"unidade", preco: 5.00, img: "https://www.sumerbol.com.br/uploads/images/2017/10/coxa-e-sobrecoxa-de-frango-assada-ao-vinho-1509133757.jpg" },
-    { id: 13, nome: "Salsição", desc:"unidade", preco: 4.00, img: "https://p2.trrsf.com/image/fget/cf/1200/630/middle/images.terra.com/2022/07/17/109317278-receitas-com-linguica-de-churrasco-toscana.jpg" },
-    { id: 14, nome: "Linguiça", desc:"por quilo", preco: 4.00, img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTuTi8oZLSOi9gd2GLXawoxreh_IUIx5WgAjwiYEWFJ_m2cZo-s9I-BRqk&s=10" },
-    { id: 15, nome: "Costela janela", desc:"por quilo", preco: 4.00, img: "https://minervafoods.com/wp-content/uploads/2023/07/tinywow_02-Costela-do-traseiro-com-legumes-assados-JANELA-HOR_29124578-scaled.jpg" },
-    { id: 16, nome: "Costela desossada", desc:"por quilo", preco: 4.00, img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEHZOmcCKrmdWaySuniDXeoeuE1RZm1JR5Bf5isVfzH2Cid1wmSZk626Ti&s=10" },
-    { id: 17, nome: "Vazio", desc:"por quilo", preco: 4.00, img: "https://damedosassados.com.br/wp-content/uploads/2017/03/VazioMagro.jpeg" }
+    { id: 12, nome: "Água com gás", desc: "", preco: 5.00, img: "https://www.imigrantesbebidas.com.br/bebida/images/products/full/2894-agua-mineral-crystal-com-gas-500ml.jpg?auto=format&fit=crop&w=400&q=80" },
+    { id: 13, nome: "Água sem gás", desc: "", preco: 5.00, img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmx5MYpuKvllLa4ekT3mnicMZ0gbwb71Dk7WrHrjHoox3tB6-M7Aj3g2kc&s=10" },
+    { id: 14, nome: "Guaraná lata", desc: "350ml", preco: 5.00, img: "https://cdn.awsli.com.br/2500x2500/1330/1330028/produto/51587137/a19f18b3f5.jpg" },
+    { id: 15, nome: "Coca cola lata", desc: "Lata 350ml.", preco: 6.00, img: "https://images.unsplash.com/photo-1622483767028-3f66f32aef97?auto=format&fit=crop&w=400&q=80" },
+    { id: 16, nome: "Guaraná", desc: "2 litros", preco: 12.00, img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSI6mjlzAVSTXXM3lAa7-jthll6C6Dm_d31rHvqUks3uY4xM0v20HtRRPTC&s=10" },
+    { id: 17, nome: "Coca cola", desc: "2 litros", preco: 15.00, img: "https://fortatacadista.vteximg.com.br/arquivos/ids/299392-1000-1000/2301822_7894900027013_BEB-REFRIG.COCA-COLA-2L-PET..jpg" },
+
+
   ];
 
   let carrinho = [];
@@ -457,7 +459,7 @@
     if (itemNoCarrinho) {
       itemNoCarrinho.quantidade++;
     } else {
-      carrinho.push({ ...produto, House: 1, quantidade: 1 });
+      carrinho.push({ ...produto, quantidade: 1 });
     }
     atualizarCarrinho();
   }
