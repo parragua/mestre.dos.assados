@@ -360,7 +360,6 @@
 <body>
 
 <header>
-  <!-- Sua imagem salva como logo.jpeg deve ficar na mesma pasta que este arquivo html -->
   <img src="logo.jpeg" alt="Mestre dos Assados Logo" class="logo-banner">
 </header>
 
@@ -371,23 +370,20 @@
       <h2>Nossa Localização</h2>
       <p>R. Guia Lopes, 3672 - Rondônia, Novo Hamburgo - RS</p>
       <div class="map-container">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3466.864771510468!2d-51.1189498!3d-29.6946025!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x951942548cb45e9d%3A0xc6cb5fb5b931c5ee!2sR.%20Guia%20Lopes%2C%203672%20-%20Rond%C3%B4nia%2C%20Novo%20Hamburgo%20-%20RS%2C%2093415-260!5e0!3m2!1spt-BR!2sbr!4v1720541200000!5m2!1spt-BR!2sbr" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3469.7213237198884!2d-51.1147576246377!3d-29.6988894154942!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95194244fe04db41%3A0x8be5fb542718cf94!2sR.%20Guia%20Lopes%2C%203672%20-%20Rond%C3%B4nia%2C%20Novo%20Hamburgo%20-%20RS%2C%2093548-156!5e0!3m2!1spt-BR!2sbr!4v1710000000000!5m2!1spt-BR!2sbr" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
     </section>
 
     <section id="cardapio">
       <h2>Nosso Cardápio</h2>
       <div class="menu-grid" id="menu-container">
-        <!-- Gerado dinamicamente pelo JS -->
       </div>
     </section>
   </div>
 
-  <!-- SEÇÃO DO CARRINHO DE COMPRAS -->
   <aside class="cart-section">
     <h3>🛒 Seu Carrinho</h3>
     <div id="cart-items-container" class="cart-items">
-      <!-- Itens adicionados entram aqui -->
     </div>
     <div class="cart-total">
       <span>Total:</span>
@@ -410,12 +406,12 @@
 
 <script>
   const cardapioItens = [
-    { id: 1, nome: "Costela janela", desc:"por quilo", preco: 4.00, img: "https://minervafoods.com/wp-content/uploads/2023/07/tinywow_02-Costela-do-traseiro-com-legumes-assados-JANELA-HOR_29124578-scaled.jpg" },
-    { id: 2, nome: "Costela desossada", desc:"por quilo", preco: 4.00, img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEHZOmcCKrmdWaySuniDXeoeuE1RZm1JR5Bf5isVfzH2Cid1wmSZk626Ti&s=10" },
-    { id: 3, nome: "Vazio", desc:"por quilo", preco: 4.00, img: "https://damedosassados.com.br/wp-content/uploads/2017/03/VazioMagro.jpeg" },
+    { id: 1, nome: "Costela janela", desc:"por quilo", preco: 0.00, img: "https://minervafoods.com/wp-content/uploads/2023/07/tinywow_02-Costela-do-traseiro-com-legumes-assados-JANELA-HOR_29124578-scaled.jpg" },
+    { id: 2, nome: "Costela desossada", desc:"por quilo", preco: 0.00, img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEHZOmcCKrmdWaySuniDXeoeuE1RZm1JR5Bf5isVfzH2Cid1wmSZk626Ti&s=10" },
+    { id: 3, nome: "Vazio", desc:"por quilo", preco: 0.00, img: "https://damedosassados.com.br/wp-content/uploads/2017/03/VazioMagro.jpeg" },
     { id: 4, nome: "Sobrecoxa", desc:"unidade", preco: 5.00, img: "https://www.sumerbol.com.br/uploads/images/2017/10/coxa-e-sobrecoxa-de-frango-assada-ao-vinho-1509133757.jpg" },
     { id: 5, nome: "Salsição", desc:"unidade", preco: 4.00, img: "https://p2.trrsf.com/image/fget/cf/1200/630/middle/images.terra.com/2022/07/17/109317278-receitas-com-linguica-de-churrasco-toscana.jpg" },
-    { id: 6, nome: "Linguiça", desc:"por quilo", preco: 4.00, img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTuTi8oZLSOi9gd2GLXawoxreh_IUIx5WgAjwiYEWFJ_m2cZo-s9I-BRqk&s=10" },
+    { id: 6, nome: "Linguiça", desc:"por quilo", preco: 0.00, img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTuTi8oZLSOi9gd2GLXawoxreh_IUIx5WgAjwiYEWFJ_m2cZo-s9I-BRqk&s=10" },
     { id: 7, nome: "Frango assado inteiro + polenta", desc: "Acompanha polenta da máquina", preco: 50.00, img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlHVhanmayEgqDSwhOso_lmTSCxFK5YFoBHWrGQFvHWS3g7dgkY3lrD_M&s=10" },
     { id: 8, nome: "Porção de polenta frita", desc: "Frita na hora", preco: 8.00, img: "https://cozinha365.com.br/wp-content/uploads/2025/10/Polenta-frita-na-airfryer-1024x1024.png" },
     { id: 9, nome: "Maionese", desc: "500 gramas", preco: 10.00, img: "https://claudia.abril.com.br/wp-content/uploads/2020/02/maionese-de-batata.jpg" },
@@ -426,12 +422,18 @@
     { id: 14, nome: "Guaraná lata", desc: "350ml", preco: 5.00, img: "https://cdn.awsli.com.br/2500x2500/1330/1330028/produto/51587137/a19f18b3f5.jpg" },
     { id: 15, nome: "Coca cola lata", desc: "Lata 350ml.", preco: 6.00, img: "https://images.unsplash.com/photo-1622483767028-3f66f32aef97?auto=format&fit=crop&w=400&q=80" },
     { id: 16, nome: "Guaraná", desc: "2 litros", preco: 12.00, img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSI6mjlzAVSTXXM3lAa7-jthll6C6Dm_d31rHvqUks3uY4xM0v20HtRRPTC&s=10" },
-    { id: 17, nome: "Coca cola", desc: "2 litros", preco: 15.00, img: "https://fortatacadista.vteximg.com.br/arquivos/ids/299392-1000-1000/2301822_7894900027013_BEB-REFRIG.COCA-COLA-2L-PET..jpg" },
-
-
+    { id: 17, nome: "Coca cola", desc: "2 litros", preco: 15.00, img: "https://fortatacadista.vteximg.com.br/arquivos/ids/299392-1000-1000/2301822_7894900027013_BEB-REFRIG.COCA-COLA-2L-PET..jpg" }
   ];
 
   let carrinho = [];
+
+  function formatarExibicaoPreco(item) {
+    if (item.preco === 0) {
+      return "pedir por mensagem";
+    }
+    let sufixo = item.desc === "por quilo" ? " / kg" : "";
+    return `R$ ${item.preco.toFixed(2).replace('.', ',')}${sufixo}`;
+  }
 
   function renderizarCardapio() {
     const container = document.getElementById('menu-container');
@@ -444,7 +446,7 @@
                     <p class="item-desc">${item.desc}</p>
                 </div>
                 <div class="item-bottom">
-                    <span class="item-price">R$ ${item.preco.toFixed(2).replace('.', ',')}</span>
+                    <span class="item-price">${formatarExibicaoPreco(item)}</span>
                     <button class="btn-add" onclick="adicionarAoCarrinho(${item.id})">Pedir</button>
                 </div>
             </div>
@@ -489,11 +491,14 @@
     container.innerHTML = carrinho.map(item => {
       const subtotal = item.preco * item.quantidade;
       total += subtotal;
+
+      let textoPrecoCarrinho = item.preco === 0 ? "pedir por mensagem" : `R$ ${item.preco.toFixed(2).replace('.', ',')}`;
+
       return `
         <div class="cart-item">
           <div class="cart-item-info">
             <div class="cart-item-name">${item.nome}</div>
-            <div class="cart-item-price">R$ ${item.preco.toFixed(2).replace('.', ',')}</div>
+            <div class="cart-item-price">${textoPrecoCarrinho}</div>
           </div>
           <div class="cart-item-actions">
             <button class="btn-qty" onclick="alterarQuantidade(${item.id}, -1)">-</button>
@@ -516,15 +521,26 @@
     let numeroWhatsapp = "5551996577659";
     let mensagem = "*Novo Pedido - Mestre dos Assados*\n\n";
     let total = 0;
+    let temItemConsulta = false;
 
     carrinho.forEach(item => {
-      const subtotal = item.preco * item.quantidade;
-      total += subtotal;
-      mensagem += `• *${item.quantidade}x* ${item.nome} _(R$ ${item.preco.toFixed(2).replace('.', ',')} un.)_\n`;
+      if (item.preco === 0) {
+        temItemConsulta = true;
+        mensagem += `• *${item.quantidade}x* ${item.nome} _(Preço Sob Consulta)_\n`;
+      } else {
+        const subtotal = item.preco * item.quantidade;
+        total += subtotal;
+        mensagem += `• *${item.quantidade}x* ${item.nome} _(R$ ${item.preco.toFixed(2).replace('.', ',')} un.)_\n`;
+      }
     });
 
-    mensagem += `\n*Total do Pedido:* R$ ${total.toFixed(2).replace('.', ',')}\n\n`;
-    mensagem += `Por favor, me informe o método de pagamento e se será para entrega ou retirada! 🍖🔥`;
+    if (total > 0) {
+      mensagem += `\n*Total dos itens fixos:* R$ ${total.toFixed(2).replace('.', ',')}\n`;
+    }
+
+    if (temItemConsulta) {
+      mensagem += `\n*Aviso:* O pedido contém carne por KG. O valor final exato será confirmado após a pesagem! ⚖️\n`;
+    }
 
     let urlMensagem = encodeURIComponent(mensagem);
     let linkWhatsapp = `https://wa.me/${numeroWhatsapp}?text=${urlMensagem}`;
